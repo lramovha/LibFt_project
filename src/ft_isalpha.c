@@ -1,33 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 14:47:37 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/29 11:53:22 by lramovha         ###   ########.fr       */
+/*   Created: 2019/05/29 16:24:11 by lramovha          #+#    #+#             */
+/*   Updated: 2019/05/29 16:33:14 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int ft_isalpha(int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		i++;
-	}
-	while (s2[j])
-	{
-		s1[i + j] = s2[j];
-		j++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
+    if ((c >= 'A' && 'Z' >= c) || (c >= 'a' && 'z' >= c))
+        return (1);
+    return (0);
 }

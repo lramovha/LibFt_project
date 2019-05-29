@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 14:47:37 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/29 11:53:22 by lramovha         ###   ########.fr       */
+/*   Created: 2019/05/29 12:50:10 by lramovha          #+#    #+#             */
+/*   Updated: 2019/05/29 13:15:34 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+char    *ft_strrchr(const char *s, int c)
 {
-	unsigned int	i;
-	unsigned int	j;
+    int i;
+    int j;
 
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		i++;
-	}
-	while (s2[j])
-	{
-		s1[i + j] = s2[j];
-		j++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
+    i = ft_strlen(s);
+    j = 0;
+    while ( i >= j)
+    if (s[i - j++] == c)
+        return ((char *)&s[i - (j - 1)]);
+    return (NULL);
 }

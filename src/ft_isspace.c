@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/27 14:47:37 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/29 11:53:22 by lramovha         ###   ########.fr       */
+/*   Created: 2019/05/29 15:46:31 by lramovha          #+#    #+#             */
+/*   Updated: 2019/05/29 15:54:06 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *s1, const char *s2)
+int ft_isspace(int c)
 {
-	unsigned int	i;
-	unsigned int	j;
-
-	i = 0;
-	j = 0;
-	while (s1[i])
-	{
-		i++;
-	}
-	while (s2[j])
-	{
-		s1[i + j] = s2[j];
-		j++;
-	}
-	s1[i + j] = '\0';
-	return (s1);
+    if (c == '\v' || c == '\r' || c == '\f' || c == '\n' || c == ' '
+        || c == '\t')
+        return (1);
+    return (0);
 }
