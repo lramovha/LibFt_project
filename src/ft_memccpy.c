@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 13:54:08 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/30 14:10:20 by lramovha         ###   ########.fr       */
+/*   Created: 2019/05/30 15:25:26 by lramovha          #+#    #+#             */
+/*   Updated: 2019/05/30 16:47:12 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	unsigned char	*ps1;
-	unsigned char	*ps2;
+	size_t			i;
+	unsigned char	*pdst;
+	unsigned char	*psrc;
 
-	if (!n)
-		return (0);
-	ps1 = (unsigned char *)s1;
-	ps2 = (unsigned char *)s2;
-	while ((*ps1 && (*ps1 == *ps2)) && --n)
+	i = 0;
+	pdst = (unsigned char *)dst;
+	psrc = (unsigned char*)src;
+	while (i < n)
 	{
-		if (*ps1 != *ps2)
-			return (*ps1 - *ps2);
-		++ps1;
-		++ps2;
+		pdst[i] = psrc[i];
+		if (psrc[i] == (unsigned char)c)
+			return (&pdst[i + 1]);
+		++i;
 	}
-	return (*ps1 - *ps2);
+	return (NULL);
 }
