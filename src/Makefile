@@ -6,20 +6,20 @@
 #    By: lramovha <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/31 14:36:48 by lramovha          #+#    #+#              #
-#    Updated: 2019/05/31 14:54:04 by lramovha         ###   ########.fr        #
+#    Updated: 2019/06/04 15:17:17 by lramovha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC		= gcc
-CFLAGS  = -Wall -Westra -Werror
+CFLAGS  = -Wall -Wextra -Werror
 AR      = ar rc
 RANLIB  = ranlib
 
 NAME    = libft.a
-HEAD    = libdt.h
-SRCS    = ft_*
+HEAD    = libft.h
+SRCS    = *.c
 
-OBJS    = $(SRCS:.c=.o)
+OBJS    = $(SRCS:%.c=%.o)
 
 .PHONY: all, clean, fclean, re
 

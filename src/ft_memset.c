@@ -6,11 +6,11 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:03:41 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/30 16:36:09 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/04 13:22:38 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft"
+#include "libft.h"
 
 void	*ft_memset(void *b, int c, size_t len)
 {
