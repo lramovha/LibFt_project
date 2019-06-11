@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_wordcount.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 14:02:20 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/11 16:36:43 by lramovha         ###   ########.fr       */
+/*   Created: 2019/06/11 17:20:23 by lramovha          #+#    #+#             */
+/*   Updated: 2019/06/11 17:20:38 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+size_t		ft_wordcount(const char *s, char c)
 {
-	unsigned int	i;
+	size_t	i;
+	size_t	w;
 
-	if (!s || !(*s) || !f)
-		return ;
 	i = 0;
+	w = 0;
 	while (s[i])
 	{
-		f(i, &s[i]);
-		++i;
+		if (s[i] != c)
+			w += 1;
+		while (s[i] != c && s[i + 1])
+			i += 1;
+		i += 1;
 	}
+	return (w);
 }

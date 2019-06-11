@@ -6,17 +6,17 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 13:04:00 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/10 13:10:33 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/11 17:22:38 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void   ft_memdel(void  **p)
+void	ft_memdel(void **p)
 {
-    if (ap && *ap)
-    {
-        free(*ap);
-        *ap = NULL;
-    }
+	if (p && *p)
+	{
+		free(*p);
+		*p = NULL;
+	}
 }

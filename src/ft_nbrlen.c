@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 14:02:20 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/11 16:36:43 by lramovha         ###   ########.fr       */
+/*   Created: 2019/06/11 14:41:17 by lramovha          #+#    #+#             */
+/*   Updated: 2019/06/11 14:43:14 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+size_t	ft_nbrlen(int nbr)
 {
-	unsigned int	i;
+	int		len;
 
-	if (!s || !(*s) || !f)
-		return ;
-	i = 0;
-	while (s[i])
+	len = 0;
+	if (nbr == 0)
+		return (1);
+	if (nbr < len)
+		len += 1;
+	while (nbr != 0)
 	{
-		f(i, &s[i]);
-		++i;
+		nbr = nbr / 10;
+		len++;
 	}
+	return (len);
 }

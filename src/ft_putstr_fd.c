@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/10 14:02:20 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/11 16:36:43 by lramovha         ###   ########.fr       */
+/*   Created: 2019/06/11 15:25:38 by lramovha          #+#    #+#             */
+/*   Updated: 2019/06/11 17:07:15 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putstr_fd(char const *s, int fd)
 {
-	unsigned int	i;
-
-	if (!s || !(*s) || !f)
-		return ;
-	i = 0;
-	while (s[i])
+	while (s && *s)
 	{
-		f(i, &s[i]);
-		++i;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
 }
