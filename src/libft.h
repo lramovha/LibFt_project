@@ -6,7 +6,7 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/27 12:12:20 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/12 17:21:25 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/13 13:09:57 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ typedef	struct		s_list
 {
 	void			*content;
 	size_t			content_size;
-	struct slist	*next;
+	struct s_list	*next;
 }					t_list;
 
 size_t				ft_strlen(const char *s);

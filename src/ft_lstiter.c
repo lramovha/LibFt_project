@@ -6,7 +6,7 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 16:08:18 by lramovha          #+#    #+#             */
-/*   Updated: 2019/06/12 16:50:37 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/13 13:28:21 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 	f(lst);
 	while (lst->next)
 	{
-		*lst = lst->next;
+		lst = lst->next;
 		f(lst);
 	}
 }
