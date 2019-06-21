@@ -6,7 +6,7 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/29 14:19:26 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/30 14:23:12 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/21 13:30:06 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,21 +14,22 @@
 
 int	ft_atoi(const char *str)
 {
-	int i;
-	int sign;
-	int nbr;
+	int	res;
+	int	negative;
 
-	i = 0;
-	nbr = 0;
-	sign = 1;
-	if (!str[i])
-		return (0);
-	while (ft_isspace(str[i]))
-		++i;
-	if (str[i] == '-' || str[i] == '+')
-		if (str[i++] == '-')
-			sign = -1;
-	while (str[i] >= '0' && str[i] <= '9')
-		nbr = (nbr * 10) + (str[i++] - '0');
-	return (nbr * sign);
+	negative = 1;
+	res = 0;
+	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
+			*str == '\v' || *str == '\f' || *str == '\r'))
+		++str;
+	if (*str == '-')
+		negative = -1;
+	if (*str == '-' || *str == '+')
+		++str;
+	while (*str && *str >= '0' && *str <= '9')
+	{
+		res = res * 10 + (*str - 48);
+		++str;
+	}
+	return (res * negative);
 }

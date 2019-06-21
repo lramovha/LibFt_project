@@ -6,7 +6,7 @@
 /*   By: lramovha <lramovha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/30 15:18:38 by lramovha          #+#    #+#             */
-/*   Updated: 2019/05/30 16:43:06 by lramovha         ###   ########.fr       */
+/*   Updated: 2019/06/21 13:02:27 by lramovha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,14 @@
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t			i;
-	unsigned char	*pdst;
-	unsigned char	*psrc;
+	unsigned char		*ptr;
+	const unsigned char	*ptr2;
 
-	i = 0;
-	pdst = (unsigned char *)dst;
-	psrc = (unsigned char *)src;
-	while (i < n)
-	{
-		pdst[i] = psrc[i];
-		++i;
-	}
+	ptr = (unsigned char*)dst;
+	ptr2 = (unsigned char*)src;
+	if (dst == NULL && src == NULL)
+		return (NULL);
+	while (n-- > 0)
+		*(ptr++) = *(ptr2++);
 	return (dst);
 }
